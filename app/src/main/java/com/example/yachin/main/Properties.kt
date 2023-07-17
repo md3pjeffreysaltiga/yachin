@@ -1,6 +1,4 @@
 package com.example.yachin.main
 
-data class Properties( val rent: String) {
-    val name: Any = TODO()
-    val text: Any = TODO()
+data class Properties( val rent: Int, val name: String) {
 }
