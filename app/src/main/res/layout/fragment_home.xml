@@ -33,28 +33,118 @@
         android:id="@+id/flMap"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/cv_main"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toTopOf="@id/linear_home"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_main"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linear_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav_main"
         app:layout_constraintTop_toBottomOf="@id/flMap"
-        app:layout_constraintBottom_toTopOf="@id/bottom_nav_main">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="16dp" />
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-    </androidx.cardview.widget.CardView>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:background="@drawable/room"
+                android:layout_margin="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Room for Rent"
+                android:textStyle="bold"
+                android:layout_margin="3dp"
+                android:layout_gravity="center"
+                android:textColor="#7630ff"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:background="@drawable/apartment"
+                android:layout_margin="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apartment"
+                android:textStyle="bold"
+                android:layout_margin="3dp"
+                android:textColor="#7630ff"
+                android:layout_gravity="center"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:background="@drawable/bedspace"
+                android:layout_margin="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bed-spacer"
+                android:textStyle="bold"
+                android:layout_margin="3dp"
+                android:textColor="#7630ff"
+                android:layout_gravity="center"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:background="@drawable/condo"
+                android:layout_margin="3dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Condo for Rent"
+                android:textStyle="bold"
+                android:layout_margin="3dp"
+                android:textColor="#7630ff"
+                android:layout_gravity="center"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_main"

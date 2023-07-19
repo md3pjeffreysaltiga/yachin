@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "3172508837",
+    "project_id": "yachin-a565f",
+    "storage_bucket": "yachin-a565f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3172508837:android:cc54314fde5c4029f0594c",
+        "android_client_info": {
+          "package_name": "com.example.yachin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3172508837-nsd66g8d12s1upavl3khocvjp42cl1kq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHiytgEYKTtCEhXNN7v0-E8tBdREErmks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3172508837-nsd66g8d12s1upavl3khocvjp42cl1kq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
