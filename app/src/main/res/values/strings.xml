@@ -10,4 +10,11 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="yachin">yachin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="owner_label">Owner:</string>
+    <string name="rent_price_label">Rent Price:</string>
+    <string name="address_label">Address:</string>
+    <string name="facebook_label">Facebook Account:</string>
+    <string name="contact_number_label">Contact Number:</string>
 </resources>

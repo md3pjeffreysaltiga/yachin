@@ -67,6 +67,7 @@
             android:background="@drawable/account_profile" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rent_owner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Alexa Rodriguez"
@@ -96,6 +97,7 @@
         app:layout_constraintStart_toEndOf="@id/profile">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rent_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -107,6 +109,7 @@
             android:textColor="#7630ff"/>
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rent_fb_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -116,6 +119,7 @@
 
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rent_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -124,6 +128,7 @@
             android:textSize="16sp"/>
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/rent_contact_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
