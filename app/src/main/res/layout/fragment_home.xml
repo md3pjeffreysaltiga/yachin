@@ -29,7 +29,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
+    <fragment
+        class="com.google.android.gms.maps.SupportMapFragment"
         android:id="@+id/flMap"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -134,7 +135,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Condo for Rent"
+                android:text="Condominium"
                 android:textStyle="bold"
                 android:layout_margin="3dp"
                 android:textColor="#7630ff"
