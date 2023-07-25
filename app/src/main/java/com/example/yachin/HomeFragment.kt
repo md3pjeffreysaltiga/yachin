@@ -20,7 +20,6 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 
-
 class HomeFragment() : Fragment(),  OnMapReadyCallback {
     public var HomeFragment: HomeFragment = this
 
@@ -28,13 +27,10 @@ class HomeFragment() : Fragment(),  OnMapReadyCallback {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var etUsername: EditText
-    private lateinit var etEmail: EditText
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -45,7 +41,6 @@ class HomeFragment() : Fragment(),  OnMapReadyCallback {
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.flMap) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
-
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -63,13 +58,6 @@ class HomeFragment() : Fragment(),  OnMapReadyCallback {
         val cameraPosition = CameraPosition.builder().target(quezonCityLatLng).zoom(10f).build()
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
 
-
-    }
-
-    fun saveUserData(view: View) {
-        val username = etUsername.text.toString()
-        val email = etEmail.text.toString()
-        UserSharedPreferences.saveUserRegistration(requireContext(), username, email)
     }
 
 }
