@@ -8,9 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.yachin.databinding.FragmentAccountBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class AccountFragment() : Fragment()  {
     public var HomeFragment: AccountFragment = this
+
+    private var cloudDB = FirebaseFirestore.getInstance()
 
     private var firebaseAuth = FirebaseAuth.getInstance()
     private var _binding: FragmentAccountBinding? = null
@@ -44,6 +47,58 @@ class AccountFragment() : Fragment()  {
             }
         }
 
+        binding.idincludeaccount.submitBtn.setOnClickListener {
+            saveToFireStore("Riz", "500", "Batanes")
+            Log.e("Riz", "Success")
+        }
+    }
+
+    fun saveToFireStore(owner: String, price : String, address: String){
+        FirebaseFirestore.setLoggingEnabled(true);
+        val sampleUser: MutableMap<String, Any> = HashMap()
+        sampleUser["owner"]      = owner
+        sampleUser["price"]      = price
+        sampleUser["address"]    = address
+
+        cloudDB.collection("rent")
+            .add(sampleUser)
+            .addOnSuccessListener {
+                Log.e("FIRE", "Success")
+                apiCall()
+            }
+            .addOnFailureListener { Log.e("FIRE", "Failed > " + it.toString()) }
+
+    }
+
+    fun apiCall() {
+        cloudDB.collection("rent")
+            .get()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    task.result?.let { snap ->
+                        snap.forEach { docu ->
+                            var docIdValue = ""
+                            var owner = ""
+                            var price = ""
+                            var address = ""
+                            docIdValue = docu.id.toString()
+                            docu.data.forEach {
+                                when (it.key.toString()) {
+                                    "owner" -> { owner = it.value.toString() }
+                                    "price" -> { price = it.value.toString() }
+                                    "address" -> { address = it.value.toString() }
+                                }
+
+                            }
+//                            val newUser = CloudUsers(docIdValue, nameValue, roleValue, urlValue)
+//                            usersList.add(newUser)
+                            Log.e("Riz", owner + "\n" + price + "\n" + address)
+                        }
+//                        usersLive.postValue(usersList)
+//                        Log.e("CLOUD", "usersList > ${usersList.toString()}")
+                    }
+                }
+            }
     }
 
 

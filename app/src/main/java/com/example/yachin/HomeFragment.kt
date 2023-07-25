@@ -20,7 +20,6 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 
-
 class HomeFragment() : Fragment(),  OnMapReadyCallback {
     public var HomeFragment: HomeFragment = this
 
@@ -59,8 +58,6 @@ class HomeFragment() : Fragment(),  OnMapReadyCallback {
         val cameraPosition = CameraPosition.builder().target(quezonCityLatLng).zoom(10f).build()
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
 
-
     }
-
 
 }
