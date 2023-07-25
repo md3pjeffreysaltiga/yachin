@@ -28,10 +28,13 @@ class HomeFragment() : Fragment(),  OnMapReadyCallback {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var etUsername: EditText
+    private lateinit var etEmail: EditText
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -42,6 +45,7 @@ class HomeFragment() : Fragment(),  OnMapReadyCallback {
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.flMap) as SupportMapFragment?
         mapFragment!!.getMapAsync(this)
+
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -62,5 +66,10 @@ class HomeFragment() : Fragment(),  OnMapReadyCallback {
 
     }
 
+    fun saveUserData(view: View) {
+        val username = etUsername.text.toString()
+        val email = etEmail.text.toString()
+        UserSharedPreferences.saveUserRegistration(requireContext(), username, email)
+    }
 
 }
