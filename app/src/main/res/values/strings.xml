@@ -16,4 +16,5 @@
     <string name="address_label">Address:</string>
     <string name="facebook_label">Facebook Account:</string>
     <string name="contact_number_label">Contact Number:</string>
+    <string name="register">REGISTER</string>
 </resources>
