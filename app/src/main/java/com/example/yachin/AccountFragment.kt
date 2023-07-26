@@ -31,7 +31,7 @@ class AccountFragment() : Fragment()  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.idincluderegister.registerButton.setOnClickListener {
+        binding.idincluderegister.registerButton.setOnClickListener() {
  //           firebaseAuth.signInWithEmailAndPassword( binding.idincluderegister.etEmail.text.toString(),
             firebaseAuth.createUserWithEmailAndPassword( binding.idincluderegister.etEmail.text.toString(),
                 binding.idincluderegister.etPassword.text.toString()  ).addOnCompleteListener() { task ->
