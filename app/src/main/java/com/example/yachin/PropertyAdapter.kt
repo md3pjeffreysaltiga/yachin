@@ -28,7 +28,7 @@ class PropertyAdapter(private val propertyList: List<Properties>, private val li
     }
 
     inner class PropertyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val propertyTextView: TextView = itemView.findViewById(R.id.text_property_name)
+        private val propertyTextView: TextView = itemView.findViewById(R.id.rv_rent_list)
 
         fun bind(category: Properties) {
             propertyTextView.text = category.name as CharSequence?
