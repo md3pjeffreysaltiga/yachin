@@ -6,23 +6,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.yachin.databinding.FragmentAccountBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class AccountFragment() : Fragment()  {
+class AccountFragment : Fragment()  {
     public var HomeFragment: AccountFragment = this
 
     private var cloudDB = FirebaseFirestore.getInstance()
-
     private var firebaseAuth = FirebaseAuth.getInstance()
     private var _binding: FragmentAccountBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var rentItemRecyclerView: RecyclerView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -47,20 +50,31 @@ class AccountFragment() : Fragment()  {
             }
         }
 
+
+
         binding.idincludeaccount.submitBtn.setOnClickListener {
-            saveToFireStore("Riz", "500", "Batanes")
-            Log.e("Riz", "Success")
+            val owner = binding.idincludeaccount.rentOwner.text.toString()
+            val price = binding.idincludeaccount.rentPrice.text.toString()
+            val address = binding.idincludeaccount.rentAddress.text.toString()
+            val fb = binding.idincludeaccount.rentFbAccount.text.toString()
+            val cp = binding.idincludeaccount.rentContactNumber.text.toString()
+
+            saveToFireStore(owner, price, address, fb, cp)
+            Log.e("Jeff", "Data submission initiated.")
         }
+
     }
 
-    fun saveToFireStore(owner: String, price : String, address: String){
-        FirebaseFirestore.setLoggingEnabled(true);
+    private fun saveToFireStore(owner: String, price : String, address: String, fb: String, cp: String) {
+        FirebaseFirestore.setLoggingEnabled(true)
         val sampleUser: MutableMap<String, Any> = HashMap()
         sampleUser["owner"]      = owner
         sampleUser["price"]      = price
         sampleUser["address"]    = address
+        sampleUser["fb"]         = fb
+        sampleUser["cp"]         = cp
 
-        cloudDB.collection("rent")
+        cloudDB.collection("User")
             .add(sampleUser)
             .addOnSuccessListener {
                 Log.e("FIRE", "Success")
@@ -71,7 +85,7 @@ class AccountFragment() : Fragment()  {
     }
 
     fun apiCall() {
-        cloudDB.collection("rent")
+        cloudDB.collection("User")
             .get()
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -81,18 +95,22 @@ class AccountFragment() : Fragment()  {
                             var owner = ""
                             var price = ""
                             var address = ""
+                            var fb = ""
+                            var cp = ""
                             docIdValue = docu.id.toString()
                             docu.data.forEach {
                                 when (it.key.toString()) {
                                     "owner" -> { owner = it.value.toString() }
                                     "price" -> { price = it.value.toString() }
                                     "address" -> { address = it.value.toString() }
+                                    "fb" -> { fb = it.value.toString() }
+                                    "cp" -> { cp = it.value.toString() }
                                 }
 
                             }
 //                            val newUser = CloudUsers(docIdValue, nameValue, roleValue, urlValue)
 //                            usersList.add(newUser)
-                            Log.e("Riz", owner + "\n" + price + "\n" + address)
+                            Log.e("Riz", owner + "\n" + price + "\n" + address + "\n" + cp + "\n" + fb)
                         }
 //                        usersLive.postValue(usersList)
 //                        Log.e("CLOUD", "usersList > ${usersList.toString()}")
@@ -100,6 +118,8 @@ class AccountFragment() : Fragment()  {
                 }
             }
     }
+
+
 
 
 }

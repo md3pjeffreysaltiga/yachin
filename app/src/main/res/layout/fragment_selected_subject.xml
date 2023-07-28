@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ActivityAccount">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_main"
@@ -23,6 +23,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/layout_property"/>
+        tools:listitem="@layout/item_rent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

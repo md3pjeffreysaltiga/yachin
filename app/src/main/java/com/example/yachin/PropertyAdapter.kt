@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.yachin.main.Properties
+import com.example.yachin.Activity.Properties
 
 class PropertyAdapter(private val propertyList: List<Properties>, private val listener: OnItemClickListener) : RecyclerView.Adapter<PropertyAdapter.PropertyViewHolder>() {
 
@@ -14,7 +14,7 @@ class PropertyAdapter(private val propertyList: List<Properties>, private val li
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PropertyViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_property, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_rent, parent, false)
         return PropertyViewHolder(view)
     }
 

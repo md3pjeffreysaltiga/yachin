@@ -2,35 +2,23 @@ package com.example.yachin
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.yachin.databinding.FragmentRentBinding
-import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
+import com.example.yachin.databinding.ActivityRentBinding
 
-class RentFragment : Fragment() {
+class RentActivity : AppCompatActivity() {
 
     private var cloudDB = FirebaseFirestore.getInstance()
-    private var _binding: FragmentRentBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: ActivityRentBinding
     private val rentList: MutableList<RentItem> = mutableListOf()
     private lateinit var rentAdapter: RentAdapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = FragmentRentBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityRentBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         fetchRentData()
     }
@@ -38,7 +26,7 @@ class RentFragment : Fragment() {
     private fun setupRecyclerView() {
         rentAdapter = RentAdapter(rentList)
         binding.rvRentList.apply {
-            layoutManager = LinearLayoutManager(requireContext())
+            layoutManager = LinearLayoutManager(this@RentActivity)
             adapter = rentAdapter
         }
     }
@@ -59,8 +47,7 @@ class RentFragment : Fragment() {
                 rentAdapter.notifyDataSetChanged()
             }
             .addOnFailureListener { exception ->
-                Log.e("RentFragment", "Error fetching rent data: ${exception.message}")
+                Log.e("RentActivity", "Error fetching rent data: ${exception.message}")
             }
     }
-
 }

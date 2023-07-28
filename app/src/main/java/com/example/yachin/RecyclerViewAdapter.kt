@@ -4,15 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.core.view.View
 
-class RecyclerViewAdapter(private val rentalList : ArrayList<User>) :
+class RecyclerViewAdapter(private val rentalList : ArrayList<RentItem>) :
     RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.layout_property, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_rent, parent, false)
         return MyViewHolder(itemView)
     }
 
