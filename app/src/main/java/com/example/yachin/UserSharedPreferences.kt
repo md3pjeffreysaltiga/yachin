@@ -9,12 +9,14 @@ object UserSharedPreferences {
     private const val KEY_EMAIL = "email"
     private const val KEY_PASSWORD = "password"
     private const val USERS_COLLECTION = "users"
+    private const val KEY_REGISTERED = "registered"
 
     fun saveUserRegistration(context: Context, email: String, password: String) {
         val sharedPreferences = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString(KEY_EMAIL, email)
         editor.putString(KEY_PASSWORD, password)
+        editor.putBoolean(KEY_REGISTERED, true)
         editor.apply()
 
         // Save the user data in Firestore

@@ -8,7 +8,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UNDER CONSTRUCTION"
+        android:text="THIS FEATURE IS NOT AVAILABLE YET"
         android:textSize="36sp"
         android:textStyle="bold"
         android:gravity="center"

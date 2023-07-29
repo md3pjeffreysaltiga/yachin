@@ -70,7 +70,7 @@
             android:id="@+id/rent_owner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Alexa Rodriguez"
+            android:hint="Enter your name"
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_gravity="center"/>
@@ -103,9 +103,9 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="100dp"
-            android:hint="Price"
+            android:hint="Enter the price"
             android:textStyle="bold"
-            android:textSize="23sp"
+            android:textSize="18sp"
             android:textColor="#7630ff"/>
 
 
@@ -114,7 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:hint="Address"
+            android:hint="Enter the address"
             android:textStyle="bold"
             android:textSize="16sp"/>
 

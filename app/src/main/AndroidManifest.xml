@@ -26,8 +26,11 @@
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".SplashScreenActivity"
             android:exported="true"
-            android:label="@string/yachin"
             android:theme="@style/Theme.Yachin.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
