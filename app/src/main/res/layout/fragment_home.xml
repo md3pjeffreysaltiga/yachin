@@ -18,7 +18,7 @@
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_home"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:background="@color/white"
@@ -58,7 +58,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:background="@drawable/room"
                 android:layout_margin="3dp"/>
@@ -72,16 +72,8 @@
                 android:layout_gravity="center"
                 android:textColor="#7630ff"/>
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:background="@drawable/apartment"
                 android:layout_margin="3dp"/>
@@ -94,7 +86,6 @@
                 android:layout_margin="3dp"
                 android:textColor="#7630ff"
                 android:layout_gravity="center"/>
-
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -104,7 +95,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:background="@drawable/bedspace"
                 android:layout_margin="3dp"/>
@@ -118,16 +109,8 @@
                 android:textColor="#7630ff"
                 android:layout_gravity="center"/>
 
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:background="@drawable/condo"
                 android:layout_margin="3dp"/>
@@ -140,7 +123,6 @@
                 android:layout_margin="3dp"
                 android:textColor="#7630ff"
                 android:layout_gravity="center"/>
-
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
