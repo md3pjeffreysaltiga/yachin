@@ -22,7 +22,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/edittext_background"
-        android:hint="Let's find you a place"
+        android:text="Let's find you a place"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="@id/textView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,35 +57,9 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:background="@drawable/room"
-                android:layout_margin="3dp"/>
+            <include layout="@layout/cv_apartment"/>
+            <include layout="@layout/cv_room"/>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Room for Rent"
-                android:textStyle="bold"
-                android:layout_margin="3dp"
-                android:layout_gravity="center"
-                android:textColor="#7630ff"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:background="@drawable/apartment"
-                android:layout_margin="3dp"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Apartment"
-                android:textStyle="bold"
-                android:layout_margin="3dp"
-                android:textColor="#7630ff"
-                android:layout_gravity="center"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -94,35 +68,9 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:background="@drawable/bedspace"
-                android:layout_margin="3dp"/>
+            <include layout="@layout/cv_condo"/>
+            <include layout="@layout/cv_bedspace"/>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bed-spacer"
-                android:textStyle="bold"
-                android:layout_margin="3dp"
-                android:textColor="#7630ff"
-                android:layout_gravity="center"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:background="@drawable/condo"
-                android:layout_margin="3dp"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Condominium"
-                android:textStyle="bold"
-                android:layout_margin="3dp"
-                android:textColor="#7630ff"
-                android:layout_gravity="center"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </androidx.appcompat.widget.LinearLayoutCompat>

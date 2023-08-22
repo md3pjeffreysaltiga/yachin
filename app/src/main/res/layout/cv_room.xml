@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardViewRoom"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="10dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@drawable/room" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imageViewRoom"
+            android:layout_gravity="center"
+            android:text="Room for Rent"
+            android:textStyle="bold"
+            android:textColor="#7630ff"
+            android:textSize="18sp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>

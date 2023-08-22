@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardViewCondo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardElevation="10dp"
+    app:cardCornerRadius="10dp">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewCondo"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:src="@drawable/condo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCondo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imageViewCondo"
+            android:layout_gravity="center"
+            android:text="Condo for Rent"
+            android:textStyle="bold"
+            android:textColor="#7630ff"
+            android:textSize="18sp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>
