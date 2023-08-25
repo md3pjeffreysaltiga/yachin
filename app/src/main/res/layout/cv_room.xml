@@ -5,9 +5,16 @@
     android:id="@+id/cardViewRoom"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    app:cardElevation="10dp"
-    app:cardCornerRadius="10dp">
+    android:layout_margin="2dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="2dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:outlineProvider="bounds"
+    android:clipToPadding="false"
+    android:background="@drawable/card_border">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
@@ -18,8 +25,9 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageViewRoom"
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/room" />
+            android:layout_height="80dp"
+            android:src="@drawable/room"
+            android:scaleType="fitXY"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewPRoom"
